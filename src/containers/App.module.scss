@@ -1,0 +1,79 @@
+.App {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  position: relative;
+}
+
+.logo {
+  text-transform: uppercase;
+  font-weight: lighter;
+  line-height: 25px;
+  background: rgba($color: #000000, $alpha: 0.15);
+}
+
+.logo strong {
+  text-transform: none;
+}
+
+.logo small, .logo small strong {
+  font-size: 17px;
+  text-transform: uppercase !important;
+}
+
+.logo small {
+  font-weight: lighter;
+  position: relative;
+}
+
+.yellow {
+  color: #f1a90e;
+  font-weight: bolder;
+  font-size: 120%;
+  text-transform: none;
+  position: relative;
+}
+
+.yellow::before {
+  content: '';
+  border-left: 3px solid #f1a90e;
+  border-bottom: 3px solid #f1a90e;
+  width: 15px;
+  height: 15px;
+  transform: rotate(135deg);
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  font-size: 18px;
+}
+
+.yellow.loading::before {
+  animation: spin 1s linear infinite;
+  top: -3px;
+}
+
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 25%;
+  background: rgba(0,0,0,0.3);
+  color: #fff;
+  text-align: center;
+}
+
+.loader {
+  border: 5px solid rgba(169, 86, 86, 0.15); /* Light grey */
+  border-top: 5px solid #ffcd4d; /* Blue */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  margin: auto;
+  display: none;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
